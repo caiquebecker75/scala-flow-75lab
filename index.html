@@ -59,10 +59,6 @@ img{display:block;max-width:100%}
 .chrome{position:absolute;left:0;right:0;top:0;height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:40;pointer-events:none}
 .chrome > *{pointer-events:auto}
 .chrome .logo{height:44px;width:auto}
-.acts{display:flex;gap:6px;font-family:"Barlow Condensed";font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
-.acts button{padding:7px 16px;border-radius:99px;opacity:.55;transition:.3s}
-.acts button.on{opacity:1;background:var(--red);color:#fff}
-.on-red .acts button.on{background:#fff;color:var(--red)}
 .pair{font-family:"Barlow Condensed";font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
 .pair i{width:22px;height:1.5px;background:currentColor;opacity:.5}
 
@@ -466,7 +462,7 @@ body.down #cur{transform:scale(.85)}
   <div class="head">
     <div class="eyebrow" data-a>03 · Quem perde com a pilha</div>
     <h2 class="h1" data-a style="transition-delay:.1s">Uma bisnaga caída <em>custa para todos.</em></h2>
-    <p class="lead" data-a style="transition-delay:.2s">Toque em cada lado da cadeia.</p>
+    <p class="lead" data-a style="transition-delay:.2s">Da gôndola ao caixa, todo mundo paga a conta.</p>
   </div>
   <div class="card" data-a style="transition-delay:.3s">
     <div class="who fade" id="who">Scala</div>
@@ -715,7 +711,6 @@ body.down #cur{transform:scale(.85)}
 <!-- chrome -->
 <header class="chrome">
   <img class="logo" id="clogo" src="assets/scala-logo.svg" alt="Queijos Scala">
-  <nav class="acts" id="acts"><button data-go="0">Começo</button><button data-go="3">Meio</button><button data-go="8">Fim</button></nav>
   <div class="pair">Queijos Scala <i></i> 75 LAB</div>
 </header>
 <footer class="foot">
@@ -770,10 +765,8 @@ function show(n){
   $('#flogo').src = light ? 'assets/75lab-wordmark-paper.png' : 'assets/75lab-wordmark-black.png';
   document.querySelector('.chrome').style.color = (light || th === 'split') ? '#fff' : '';
   document.querySelector('.pair').style.color = th === 'split' ? 'var(--ink)' : '';
-  document.querySelector('.acts').style.color = th === 'split' ? 'var(--ink)' : '';
   $$('#prog button').forEach((b, i) => b.classList.toggle('on', i === n));
   $$('#igrid button').forEach((b, i) => b.classList.toggle('on', i === n));
-  $$('#acts button').forEach((b, i) => b.classList.toggle('on', i === +s.dataset.act));
   $('#ct').textContent = `${String(n + 1).padStart(2, '0')}/${N}`;
   requestAnimationFrame(() => requestAnimationFrame(() => s.classList.add('in')));
   onEnter[n] && onEnter[n]();
@@ -840,8 +833,12 @@ function imp(k){
   const f = $$('#s3 .fade'); f.forEach((x) => x.style.opacity = 0);
   setTimeout(() => { $('#who').textContent = IMP[k][0]; $('#bad').textContent = IMP[k][1]; $('#good').textContent = IMP[k][2]; f.forEach((x) => x.style.opacity = 1); }, 180);
 }
-$$('#s3 .node').forEach((n) => n.addEventListener('click', () => imp(n.dataset.k)));
-imp('scala');
+const ORDER = ['shopper', 'loja', 'varejo', 'scala'];
+let it = null, ik = 0;
+function cycle(){ clearInterval(it); it = setInterval(() => { if (cur !== 2) return clearInterval(it); ik = (ik + 1) % ORDER.length; imp(ORDER[ik]); }, 3400); }
+$$('#s3 .node').forEach((n) => n.addEventListener('click', () => { ik = ORDER.indexOf(n.dataset.k); imp(n.dataset.k); cycle(); }));
+imp('shopper');
+onEnter[2] = () => { ik = 0; imp(ORDER[0]); cycle(); };
 
 /* 04 · chave */
 function sw(v){
