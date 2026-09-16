@@ -17,7 +17,8 @@ Os espaços de render usam os arquivos de `assets/`. Para trocar, grave a imagem
 
 | Arquivo | Onde aparece |
 |---|---|
-| `3d-34.webp` | Capa e tela 05 (anatomia com os pontos numerados) |
+| `bisnaga-recorte.webp` | Capa (só a embalagem, a solução não aparece antes da tela 05) |
+| `3d-34.webp` | Tela 05 (anatomia com os pontos numerados) |
 | `3d-lateral.webp` | Tela 05, aba Lateral |
 | `render-frontal.webp` | Tela 05, aba Frente na geladeira |
 | `render-posterior.webp` | Tela 05, aba Abastecimento |
