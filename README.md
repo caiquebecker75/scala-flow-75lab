@@ -1,15 +1,16 @@
 # Scala Flow · Queijos Scala × 75 LAB
 
-Apresentação comercial (10 telas) do display gravitacional **Scala Flow** para o Requeijão Cremoso 1,5 kg.
+Apresentação comercial (11 telas) do display gravitacional **Scala Flow** para o Requeijão Cremoso 1,5 kg.
 
 Link aberto: https://projetos.75lab.com.br/scala-flow-75lab/
 AR dos 4 modelos: https://projetos.75lab.com.br/ar/scala-queijos-scala-flow/
+Página de produto (QR de instalação): https://projetos.75lab.com.br/produtos/scala-queijos-scala-flow/
 
 ## Roteiro
 01 Capa (sem mostrar a solução) · 02 O que vimos no PDV · 03 Quem perde com a pilha (passa sozinho pelos 4 pontos) ·
 04 A virada · 05 Apresentamos o Scala Flow (renders dos 2 modelos e das composições, anatomia automática) ·
 06 Como funciona (simulador) · 07 Jornada do shopper · 08 Realidade aumentada (3D com reflexo de supermercado) ·
-09 O plano · 10 A próxima decisão
+09 Rastreio 75 LAB (QR da página de produto) · 10 O plano · 11 A próxima decisão
 
 ## Navegação
 Abertura com clique ou qualquer tecla · setas, espaço ou swipe · `M` índice · `F` tela cheia · `#N` abre direto na tela

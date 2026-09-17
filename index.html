@@ -363,6 +363,48 @@ img{display:block;max-width:100%}
 #s8 .hdr{position:absolute;right:120px;bottom:110px;width:520px;font-size:14px;font-weight:300;color:rgba(255,255,255,.5);display:flex;gap:10px;align-items:center}
 #s8 .hdr i{width:6px;height:6px;border-radius:50%;background:var(--gold-l)}
 
+
+/* ============ RASTREIO ============ */
+#sR{background:var(--cream)}
+#sR .txt{position:absolute;left:120px;top:150px;width:560px}
+#sR .display{font-size:70px;margin:28px 0 20px}
+#sR .steps{position:absolute;left:120px;top:486px;width:560px}
+.rs{display:grid;grid-template-columns:56px 1fr;gap:6px;padding:15px 0;border-top:1px solid var(--line);position:relative}
+.rs:last-child{border-bottom:1px solid var(--line)}
+.rs::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--red);transition:width 1s var(--ease)}
+.rs em{font-family:var(--serif);font-size:30px;line-height:1;color:var(--ink3);transition:.5s}
+.rs b{display:block;font-weight:400;font-size:19px;color:var(--ink2);transition:.5s}
+.rs span{display:block;font-size:15px;font-weight:300;color:var(--ink3);margin-top:3px}
+.rs.on::before{width:100%}
+.rs.on em{color:var(--red)}
+.rs.on b{color:var(--ink);font-weight:500}
+#sR .phone{position:absolute;left:760px;top:120px;width:320px;height:660px;border-radius:46px;background:#141012;padding:12px;box-shadow:0 50px 90px rgba(46,8,11,.28),inset 0 0 0 2px #2a2326}
+#sR .phone .scr{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#fff}
+#sR .phone .scr img{position:absolute;left:0;top:0;width:100%;transition:opacity .8s}
+#sR .phone .long{animation:rol 26s cubic-bezier(.45,0,.55,1) infinite alternate;animation-play-state:paused}
+#sR.in .phone .long{animation-play-state:running}
+@keyframes rol{0%,8%{transform:translateY(0)}100%{transform:translateY(calc(-100% + 636px))}}
+#sR .phone .notch{position:absolute;left:50%;top:10px;width:96px;height:26px;margin-left:-48px;border-radius:20px;background:#141012;z-index:2}
+#sR .phone .toast{position:absolute;left:14px;right:14px;bottom:18px;z-index:3;background:rgba(36,27,23,.92);color:#fff;border-radius:18px;padding:12px 14px;display:flex;gap:10px;align-items:center;font-size:13px;line-height:1.3;opacity:0;transform:translateY(12px);transition:.6s var(--ease)}
+#sR .phone .toast.on{opacity:1;transform:none}
+#sR .phone .toast i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--green);display:grid;place-items:center}
+#sR .phone .toast svg{width:14px;height:14px;color:#fff}
+#sR .map{position:absolute;right:120px;top:120px;width:360px;height:330px;border-radius:4px;background:radial-gradient(ellipse at 40% 40%,#4A0F15 0,#2A0709 70%);overflow:hidden;color:#fff}
+#sR .map svg.grid{position:absolute;inset:0;opacity:.35}
+#sR .map .pinm{position:absolute;width:14px;height:14px;margin:-7px;border-radius:50%;background:var(--gold-l);box-shadow:0 0 0 0 rgba(217,190,149,.6);transform:scale(0);transition:transform .6s var(--ease)}
+#sR .map .pinm.on{transform:scale(1);animation:pinp 2.2s infinite}
+@keyframes pinp{0%{box-shadow:0 0 0 0 rgba(217,190,149,.55)}100%{box-shadow:0 0 0 18px rgba(217,190,149,0)}}
+#sR .map .head{position:absolute;left:22px;top:18px;right:22px;display:flex;justify-content:space-between;align-items:baseline}
+#sR .map .head small{font-family:var(--cond);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l)}
+#sR .map .head b{font-family:var(--serif);font-weight:300;font-size:46px;line-height:1}
+#sR .map .foot{position:absolute;left:22px;right:22px;bottom:16px;display:flex;gap:14px;font-family:var(--cond);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+#sR .qrb{position:absolute;right:120px;top:476px;width:360px;background:#fff;border-radius:4px;padding:22px;display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:center;box-shadow:0 24px 50px rgba(46,8,11,.1)}
+#sR .qrb img{width:130px;height:130px}
+#sR .qrb b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:24px;line-height:1.05;color:var(--red)}
+#sR .qrb span{display:block;font-size:14px;font-weight:300;color:var(--ink2);margin-top:8px;line-height:1.35}
+#sR .cta{position:absolute;right:120px;top:672px;width:360px}
+#sR .cta .btn{width:100%;justify-content:space-between}
+
 /* ============ 09 PLANO ============ */
 #s9 .txt{position:absolute;left:120px;top:150px;width:700px}
 #s9 .display{font-size:80px;margin:28px 0 0}
@@ -670,6 +712,34 @@ body.down #cur{width:30px;height:30px;margin:-15px 0 0 -15px}
   <p class="hdr" data-a="fade" style="transition-delay:1.2s"><i></i>O 3D reflete a luz e as gôndolas de um supermercado.</p>
 </section>
 
+<!-- ============ RASTREIO ============ -->
+<section class="slide" id="sR" data-ui="d d d d" data-title="Rastreio de cada peça">
+  <div class="txt">
+    <div class="kicker" data-a="fade"><i></i>Rastreio 75 LAB</div>
+    <h2 class="display"><span class="ln"><span>Cada peça instalada,</span></span><span class="ln"><span style="transition-delay:.1s"><em>no mapa.</em></span></span></h2>
+    <p class="lead" data-a style="transition-delay:.5s">Um QR na embalagem liga cada peça à sua loja.</p>
+  </div>
+  <div class="steps" id="rsteps">
+    <div class="rs" data-a style="transition-delay:.5s"><em>1</em><div><b>QR na embalagem</b><span>Cada kit sai da 75 LAB com a etiqueta do Scala Flow.</span></div></div>
+    <div class="rs" data-a style="transition-delay:.6s"><em>2</em><div><b>O promotor escaneia</b><span>Abre a página da peça: montagem, medidas e AR.</span></div></div>
+    <div class="rs" data-a style="transition-delay:.7s"><em>3</em><div><b>Registra a instalação</b><span>Nome, loja, modelo instalado e localização do celular.</span></div></div>
+    <div class="rs" data-a style="transition-delay:.8s"><em>4</em><div><b>Scala acompanha</b><span>Painel com mapa, filtros por peça e exportação para Excel.</span></div></div>
+  </div>
+  <div class="phone" data-a="z" style="transition-delay:.3s">
+    <div class="scr"><span class="notch"></span><img class="long" src="assets/tela-pagina.webp" alt="Página de produto do Scala Flow">
+      <div class="toast" id="rtoast"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></i><div>Instalação registrada<br><span style="opacity:.7">Modelo 1 · localização confirmada</span></div></div>
+    </div>
+  </div>
+  <div class="map" data-a="r" style="transition-delay:.5s">
+    <svg class="grid" viewBox="0 0 360 330" fill="none" stroke="#D9BE95" stroke-width=".6"><path d="M0 60H360M0 120H360M0 180H360M0 240H360M60 0V330M120 0V330M180 0V330M240 0V330M300 0V330"/><path d="M40 300C90 250 120 260 150 200S230 120 330 40" stroke-width="1.2" stroke-dasharray="3 5"/></svg>
+    <div class="head"><small>Painel · exemplo</small><b id="rcount">0</b></div>
+    <span class="pinm" style="left:92px;top:212px"></span><span class="pinm" style="left:150px;top:150px"></span><span class="pinm" style="left:214px;top:188px"></span><span class="pinm" style="left:262px;top:120px"></span><span class="pinm" style="left:120px;top:262px"></span><span class="pinm" style="left:300px;top:230px"></span><span class="pinm" style="left:186px;top:252px"></span>
+    <div class="foot"><span>Mapa</span><span>Peça</span><span>Período</span><span>Excel</span></div>
+  </div>
+  <div class="qrb" data-a="r" style="transition-delay:.7s"><img src="assets/qr-produto.png" alt="QR code da página de produto"><div><b>Escaneie agora.</b><span>Abra a página da peça como o promotor vai ver na loja.</span></div></div>
+  <div class="cta" data-a style="transition-delay:.9s"><a class="btn ghost" href="https://projetos.75lab.com.br/produtos/scala-queijos-scala-flow/" target="_blank" rel="noopener">Abrir a página da peça<span class="ar"><svg><use href="#arr"/></svg></span></a></div>
+</section>
+
 <!-- ============ 09 ============ -->
 <section class="slide" id="s9" data-ui="d d d d" data-title="Provar antes de escalar">
   <div class="txt">
@@ -728,7 +798,7 @@ body.down #cur{width:30px;height:30px;margin:-15px 0 0 -15px}
 <!-- chrome -->
 <div class="ui" id="uiTL"><img id="logoScala" src="assets/scala-logo.svg" alt="Queijos Scala"></div>
 <div class="ui" id="uiTR"><span class="tag">Uma proposta</span><span class="x"></span><span class="lab" title="75 LAB"><svg><use href="#lab"/></svg></span></div>
-<div class="ui" id="uiBL"><span class="fol"><b id="fN">01</b><span> / 10</span></span><span class="ttl" id="fT"></span></div>
+<div class="ui" id="uiBL"><span class="fol"><b id="fN">01</b><span> / 11</span></span><span class="ttl" id="fT"></span></div>
 <div class="ui prog" id="uiBC"></div>
 <div class="ui" id="uiBR">
   <button class="ib" id="idx" title="Índice (M)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
@@ -950,6 +1020,14 @@ $('#openAR').addEventListener('click', (e) => { if (mobile && mv.canActivateAR) 
 $('#copyAR').onclick = async () => { try { await navigator.clipboard.writeText($('#openAR').href); $('#copyAR').textContent = 'Link copiado'; } catch { $('#copyAR').textContent = 'Não foi possível copiar'; } setTimeout(() => $('#copyAR').textContent = 'Copiar link', 2200); };
 onEnter[7] = () => { if (!mv.getAttribute('src')) model(0); mv.setAttribute('loading', 'eager'); };
 
+
+/* rastreio */
+let rt = null, rk = 0;
+function rstep(k){ rk = k; $$('#rsteps .rs').forEach((s, i) => s.classList.toggle('on', i === k)); $('#rtoast').classList.toggle('on', k >= 2);
+  const pins = $$('#sR .pinm'); const n = k >= 3 ? pins.length : 0; pins.forEach((p, i) => setTimeout(() => p.classList.toggle('on', i < n), i * 160));
+  const el = $('#rcount'); if (k >= 3) { const t0 = performance.now(); (function tick(t){ const q = Math.min(1, (t - t0) / 1400); el.textContent = Math.round(7 * (1 - Math.pow(1 - q, 3))); if (q < 1) requestAnimationFrame(tick); })(t0); } else el.textContent = '0'; }
+onEnter[8] = () => { rstep(0); clearInterval(rt); rt = setInterval(() => { if (cur !== 8) return clearInterval(rt); rstep((rk + 1) % 4); }, 3000); };
+
 /* 09 · plano */
 const P = [
   ['Semanas 1 e 2', 'Rota técnica', ['10 a 15 lojas medidas com trena e foto', 'Portas, saídas de ar e etiquetas mapeadas', 'Clusters de geladeira M1, M2 e M3']],
@@ -969,8 +1047,8 @@ function phase(b){
   }, 320);
 }
 $$('#bars .bar').forEach((x) => x.addEventListener('click', () => { clearInterval(bt); phase(+x.dataset.b); }));
-onEnter[8] = () => {
-  phase(0); clearInterval(bt); bt = setInterval(() => { if (cur !== 8) return clearInterval(bt); phase((bk + 1) % 5); }, 3600);
+onEnter[9] = () => {
+  phase(0); clearInterval(bt); bt = setInterval(() => { if (cur !== 9) return clearInterval(bt); phase((bk + 1) % 5); }, 3600);
   $$('#s9 [data-count]').forEach((el) => { const to = +el.dataset.count, suf = el.dataset.suf || '', t0 = performance.now() + 500;
     (function tick(t){ const p = Math.max(0, Math.min(1, (t - t0) / 1800)), v = Math.round(to * (1 - Math.pow(1 - p, 4))); el.textContent = v + (p === 1 ? suf : ''); if (p < 1) requestAnimationFrame(tick); })(performance.now()); });
 };
@@ -983,7 +1061,7 @@ $('#approve').onclick = () => {
   [2, 3, 4, 5].forEach((k, i) => setTimeout(() => chain(k), 800 + i * 320));
   setTimeout(() => $('#ok').classList.add('on'), 2200);
 };
-onEnter[9] = () => { $$('#s10 .ck').forEach((c) => c.classList.remove('on')); chain(1); $('#ok').classList.remove('on'); };
+onEnter[10] = () => { $$('#s10 .ck').forEach((c) => c.classList.remove('on')); chain(1); $('#ok').classList.remove('on'); };
 
 /* abertura cinematográfica */
 const h = parseInt(location.hash.slice(1), 10);
