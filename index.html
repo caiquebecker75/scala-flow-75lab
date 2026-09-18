@@ -586,6 +586,38 @@ body.down #cur{width:30px;height:30px;margin:-15px 0 0 -15px}
 </section>
 
 <!-- ============ 05 ============ -->
+<section class="slide" id="s6" data-ui="d d d d" data-title="Como funciona">
+  <div class="txt">
+    <div class="kicker" data-a="fade"><i></i>Como funciona</div>
+    <h2 class="display"><span class="ln"><span>Tirou uma.</span></span><span class="ln"><span style="transition-delay:.1s"><em>A próxima vem.</em></span></span></h2>
+  </div>
+  <div class="sim" data-a style="transition-delay:.5s">
+    <svg viewBox="0 0 760 390" id="simsvg">
+      <path d="M120 60 H520 V282 L150 334 H120Z" fill="#EDE4D5"/>
+      <path d="M116 60 H524 V286" stroke="#241B17" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M116 60 V186" stroke="#241B17" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M520 282 L150 336 L74 347 L64 314" stroke="#BE1E28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="40" y="376" font-family="Barlow Condensed" font-size="12" letter-spacing="3" fill="#9C7A50">RETIRADA</text>
+      <g transform="rotate(-8.3 330 362)"><path d="M430 362 H250 M260 356 L250 362 L260 368" stroke="#BE9669" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="290" y="382" font-family="Barlow Condensed" font-size="12" letter-spacing="3" fill="#9C7A50">GRAVIDADE</text></g>
+      <g id="caps"></g>
+    </svg>
+    <div class="state" id="state"><i></i><span id="frontTxt">Frente cheia</span><span class="c" id="cnt">5 de 5</span></div>
+    <div class="ctrls">
+      <button class="btn solid" id="take">Retirar uma<span class="ar"><svg><use href="#arr"/></svg></span></button>
+      <button class="btn ghost" id="fill">Abastecer<span class="ar"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></button>
+      <div class="auto" id="autoTxt">Demonstração automática</div>
+    </div>
+  </div>
+  <div class="steps" id="steps">
+    <div class="st" data-a style="transition-delay:.4s"><em>1</em><div><b>Abastecer</b><p>Bisnagas entram deitadas, em canal próprio.</p></div></div>
+    <div class="st" data-a style="transition-delay:.5s"><em>2</em><div><b>Guiar</b><p>Inclinação e baixo atrito conduzem o produto.</p></div></div>
+    <div class="st" data-a style="transition-delay:.6s"><em>3</em><div><b>Retirar</b><p>O shopper pega na frente, sem desmontar nada.</p></div></div>
+    <div class="st" data-a style="transition-delay:.7s"><em>4</em><div><b>Recompor</b><p>A próxima desce e a frente fica cheia.</p></div></div>
+  </div>
+  <p class="note" data-a style="transition-delay:.9s">Ângulo e atrito calibrados em protótipo, com bisnaga fria e úmida.</p>
+</section>
+
+<!-- ============ 06 ============ -->
 <section class="slide dk" id="s5" data-ui="l l l l" data-title="Apresentamos o Scala Flow">
   <div class="floor"></div>
   <div class="views sweep" data-a="z" style="transition-delay:.35s">
@@ -617,38 +649,6 @@ body.down #cur{width:30px;height:30px;margin:-15px 0 0 -15px}
     <button class="lg" data-p="5"><em>6</em><div><b>Modularidade</b><span>Módulos lado a lado para cada geladeira.</span></div></button>
   </div>
   <div class="vtabs" data-a="fade" style="transition-delay:1.1s"><button class="on" data-t="0">Modelo 1</button><button data-t="1">Modelo 1 · 3 peças</button><button data-t="2">Modelo 2</button><button data-t="3">Modelo 2 · 2 peças</button></div>
-</section>
-
-<!-- ============ 06 ============ -->
-<section class="slide" id="s6" data-ui="d d d d" data-title="Como funciona">
-  <div class="txt">
-    <div class="kicker" data-a="fade"><i></i>Como funciona</div>
-    <h2 class="display"><span class="ln"><span>Tirou uma.</span></span><span class="ln"><span style="transition-delay:.1s"><em>A próxima vem.</em></span></span></h2>
-  </div>
-  <div class="sim" data-a style="transition-delay:.5s">
-    <svg viewBox="0 0 760 390" id="simsvg">
-      <path d="M120 60 H520 V282 L150 334 H120Z" fill="#EDE4D5"/>
-      <path d="M116 60 H524 V286" stroke="#241B17" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <path d="M116 60 V186" stroke="#241B17" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M520 282 L150 336 L74 347 L64 314" stroke="#BE1E28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <text x="40" y="376" font-family="Barlow Condensed" font-size="12" letter-spacing="3" fill="#9C7A50">RETIRADA</text>
-      <g transform="rotate(-8.3 330 362)"><path d="M430 362 H250 M260 356 L250 362 L260 368" stroke="#BE9669" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="290" y="382" font-family="Barlow Condensed" font-size="12" letter-spacing="3" fill="#9C7A50">GRAVIDADE</text></g>
-      <g id="caps"></g>
-    </svg>
-    <div class="state" id="state"><i></i><span id="frontTxt">Frente cheia</span><span class="c" id="cnt">5 de 5</span></div>
-    <div class="ctrls">
-      <button class="btn solid" id="take">Retirar uma<span class="ar"><svg><use href="#arr"/></svg></span></button>
-      <button class="btn ghost" id="fill">Abastecer<span class="ar"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></button>
-      <div class="auto" id="autoTxt">Demonstração automática</div>
-    </div>
-  </div>
-  <div class="steps" id="steps">
-    <div class="st" data-a style="transition-delay:.4s"><em>1</em><div><b>Abastecer</b><p>Bisnagas entram deitadas, em canal próprio.</p></div></div>
-    <div class="st" data-a style="transition-delay:.5s"><em>2</em><div><b>Guiar</b><p>Inclinação e baixo atrito conduzem o produto.</p></div></div>
-    <div class="st" data-a style="transition-delay:.6s"><em>3</em><div><b>Retirar</b><p>O shopper pega na frente, sem desmontar nada.</p></div></div>
-    <div class="st" data-a style="transition-delay:.7s"><em>4</em><div><b>Recompor</b><p>A próxima desce e a frente fica cheia.</p></div></div>
-  </div>
-  <p class="note" data-a style="transition-delay:.9s">Ângulo e atrito calibrados em protótipo, com bisnaga fria e úmida.</p>
 </section>
 
 <!-- ============ 07 ============ -->
@@ -774,7 +774,7 @@ body.down #cur{width:30px;height:30px;margin:-15px 0 0 -15px}
     <div class="tr"></div><div class="fl" id="cfill"></div>
     <div class="pts" id="pts"><span class="pt"><i></i><b>Medir</b></span><span class="pt"><i></i><b>Prototipar</b></span><span class="pt"><i></i><b>Testar</b></span><span class="pt"><i></i><b>Provar</b></span><span class="pt"><i></i><b>Escalar</b></span></div>
   </div>
-  <div class="again" data-a style="transition-delay:1s"><button class="btn ghost nopad" data-go="4">Rever a solução</button><button class="btn ghost nopad" data-go="0">Voltar ao início</button></div>
+  <div class="again" data-a style="transition-delay:1s"><button class="btn ghost nopad" data-go="5">Rever a solução</button><button class="btn ghost nopad" data-go="0">Voltar ao início</button></div>
   <div class="panel" data-a="r" style="transition-delay:.6s">
     <div class="kicker"><i></i>O que pedimos hoje</div>
     <h3>Três sins <em>para começar.</em></h3>
@@ -930,10 +930,10 @@ onEnter[3] = () => { sw('a'); setTimeout(() => cur === 3 && sw('b'), 2800); };
 let pt = null, pk = 0, vt = 0;
 function part(p){ pk = p; $$('#legend .lg').forEach((l) => l.classList.toggle('on', +l.dataset.p === p)); $$('#s5 .pin').forEach((l) => l.classList.toggle('on', +l.dataset.p === p)); }
 function tab(t){ vt = t; $$('#s5 .vtabs button').forEach((b) => b.classList.toggle('on', +b.dataset.t === t)); $$('#s5 .v').forEach((v) => v.classList.toggle('on', +v.dataset.v === t)); $('#legend').classList.toggle('off', t !== 0); }
-function pcycle(){ clearInterval(pt); pt = setInterval(() => { if (cur !== 4) return clearInterval(pt); if (vt === 0) part((pk + 1) % 6); }, 3000); }
+function pcycle(){ clearInterval(pt); pt = setInterval(() => { if (cur !== 5) return clearInterval(pt); if (vt === 0) part((pk + 1) % 6); }, 3000); }
 $$('#legend .lg, #s5 .pin').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); tab(0); part(+b.dataset.p); pcycle(); }));
 $$('#s5 .vtabs button').forEach((b) => b.addEventListener('click', () => tab(+b.dataset.t)));
-onEnter[4] = () => { tab(0); part(0); pcycle(); };
+onEnter[5] = () => { tab(0); part(0); pcycle(); };
 
 /* 06 · simulador */
 const NS = 'http://www.w3.org/2000/svg', capsG = $('#caps');
@@ -966,8 +966,8 @@ function fill(){
 function stopAuto(){ clearInterval(auto); auto = null; $('#autoTxt').textContent = 'Modo manual'; }
 $('#take').onclick = () => { stopAuto(); take(); };
 $('#fill').onclick = () => { stopAuto(); fill(); };
-onEnter[5] = () => { resetSim(); clearInterval(auto); $('#autoTxt').textContent = 'Demonstração automática'; refill = false;
-  auto = setInterval(() => { if (cur !== 5) return clearInterval(auto);
+onEnter[4] = () => { resetSim(); clearInterval(auto); $('#autoTxt').textContent = 'Demonstração automática'; refill = false;
+  auto = setInterval(() => { if (cur !== 4) return clearInterval(auto);
     if (!refill) { if (stack.length > 2) take(); else refill = true; }
     if (refill && !fill() && stack.length >= 5) refill = false;
   }, 1700); };
