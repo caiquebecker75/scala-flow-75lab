@@ -196,10 +196,6 @@ img{display:block;max-width:100%}
 #s3 .who{display:flex;justify-content:space-between;align-items:baseline}
 #s3 .who b{font-family:var(--serif);font-weight:400;font-style:italic;font-size:40px;color:var(--red);line-height:1}
 #s3 .who span{font-family:var(--cond);font-size:13px;letter-spacing:.26em;color:var(--ink3)}
-#s3 .timer{height:1px;background:var(--line);margin:16px 0 18px;position:relative;overflow:hidden}
-#s3 .timer i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold)}
-#s3 .timer i.run{animation:tm 3.6s linear forwards}
-@keyframes tm{to{width:100%}}
 #s3 .row{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:10px 0}
 #s3 .row small{font-family:var(--cond);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink3);padding-top:5px}
 #s3 .row.good small{color:var(--green)}
@@ -549,11 +545,10 @@ body.down #cur{width:30px;height:30px;margin:-15px 0 0 -15px}
   <div class="txt">
     <div class="kicker" data-a="fade"><i></i>Quem perde com a pilha</div>
     <h2 class="display"><span class="ln"><span>Uma bisnaga caída</span></span><span class="ln"><span style="transition-delay:.1s"><em>custa para todos.</em></span></span></h2>
-    <p class="lead" data-a style="transition-delay:.5s">Da gôndola ao caixa, todo mundo paga a conta.</p>
+    <p class="lead" data-a style="transition-delay:.5s">Toque em cada ponto da cadeia: da gôndola ao caixa, todo mundo paga a conta.</p>
   </div>
   <div class="card" data-a style="transition-delay:.7s">
     <div class="who"><b class="fade" id="who">Shopper</b><span id="whoN">01 / 04</span></div>
-    <div class="timer"><i id="timer"></i></div>
     <div class="row"><small>Hoje</small><p class="fade" id="bad"></p></div>
     <div class="row good"><small>Com a solução</small><p class="fade" id="good"></p></div>
   </div>
@@ -914,18 +909,17 @@ const IMP = [
   ['Varejista', 'Categoria bagunçada e um jeito diferente em cada loja.', 'Espaço disciplinado e padrão que se replica.', [380, 595]],
   ['Scala', 'Tem estoque na loja, mas perde a frente e a leitura de marca.', 'Bloco vermelho consistente e execução sob controle.', [145, 360]],
 ];
-let it = null, ik = 0;
+let ik = 0;
 function imp(k){
   ik = k;
   $$('#s3 .node').forEach((n) => n.classList.toggle('on', +n.dataset.k === k));
   const p = $('#pulse'); p.style.left = IMP[k][3][0] + 'px'; p.style.top = IMP[k][3][1] + 'px';
   const f = $$('#s3 .fade'); f.forEach((x) => x.classList.add('h'));
   setTimeout(() => { $('#who').textContent = IMP[k][0]; $('#bad').textContent = IMP[k][1]; $('#good').textContent = IMP[k][2]; $('#whoN').textContent = `0${k + 1} / 04`; f.forEach((x) => x.classList.remove('h')); }, 320);
-  const t = $('#timer'); t.classList.remove('run'); void t.offsetWidth; t.classList.add('run');
 }
-function cycle(){ clearInterval(it); it = setInterval(() => { if (cur !== 2) return clearInterval(it); imp((ik + 1) % 4); }, 3600); }
-$$('#s3 .node').forEach((n) => n.addEventListener('click', () => { imp(+n.dataset.k); cycle(); }));
-onEnter[2] = () => { imp(0); cycle(); };
+// sem troca automática: muda só quando alguém toca num ponto
+$$('#s3 .node').forEach((n) => n.addEventListener('click', () => imp(+n.dataset.k)));
+onEnter[2] = () => imp(0);
 
 /* 04 · comparação */
 function sw(v){ $('#panel4').classList.toggle('b', v === 'b'); $$('#panel4 .tabs button').forEach((b) => b.classList.toggle('on', b.dataset.v === v)); }
